@@ -58,7 +58,7 @@ export default function App() {
       return;
     }
 
-    fetch('http://localhost:3001/api/suspended-contractors', {
+    fetch('https://insurance-renewal-backend-1.onrender.com/api/suspended-contractors', {
       headers: { 'Authorization': `Bearer ${token}` },
     })
       .then((res) => {
