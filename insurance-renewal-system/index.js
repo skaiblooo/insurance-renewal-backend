@@ -94,11 +94,13 @@ app.post('/api/login', async (req, res) => {
     }
 
     // Generate JWT token - valid for 24 hours
-    jwt.sign(
+   const token = jwt.sign(
   { userId: user.id, username: user.username },
   process.env.JWT_SECRET,
   { expiresIn: '24h' }
 );
+
+res.json({ token, username: user.username });
 
     res.json({ token, username: user.username });
   } catch (err) {
